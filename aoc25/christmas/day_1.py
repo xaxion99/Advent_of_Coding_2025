@@ -1,74 +1,68 @@
-SAFE_ROTATIONS = 'aoc25/resources/safe_rotations.txt'
+class Day1:
+    SAFE_ROTATIONS = 'aoc25/resources/safe_rotations.txt'
 
+    def __init__(self, path: str | None = None, start: int = 50, size: int = 100):
+        self._path = path or self.SAFE_ROTATIONS
+        self._start = start
+        self._size = size
+        self._rotations = self._load_rotations()
 
-# Part 1
-def load_rotations(path):
-    rotations = []
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
+    # ===== Private methods =====
 
-            if not line:
-                continue
+    def _load_rotations(self):
+        rotations = []
+        with open(self._path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                rotations.append(line)
+        return rotations
 
-            rotations.append(line)
-
-    return rotations
-
-
-def apply_rotations(rotations, start=50, size=100):
-    pos = start
-    results = []
-
-    for rot in rotations:
-        direction = rot[0]
-        amount = int(rot[1:])
-
+    def _step(self, pos: int, direction: str) -> int:
         if direction == 'R':
-            pos = (pos + amount) % size
+            return (pos + 1) % self._size
         elif direction == 'L':
-            pos = (pos - amount) % size
+            return (pos - 1) % self._size
         else:
-            raise ValueError(f"Invalid rotation: {rot}")
+            raise ValueError(f"Invalid rotation direction: {direction}")
 
-        results.append(pos)
+    def _simulate(self, track_zero_passes: bool = False):
+        pos = self._start
+        results = []
+        zero_passes = 0
 
-    return results
+        for rot in self._rotations:
+            direction = rot[0]
+            amount = int(rot[1:])
 
+            for _ in range(amount):
+                pos = self._step(pos, direction)
+                if track_zero_passes and pos == 0:
+                    zero_passes += 1
 
-def count_zeros(values):
-    return sum(1 for v in values if v == 0)
+            results.append(pos)
 
+        return results, zero_passes
 
-def day_1_run_p1():
-    rotations = load_rotations(SAFE_ROTATIONS)
-    results = apply_rotations(rotations)
-    count = count_zeros(results)
-    print(count)
+    def _count_zero_landings(self):
+        landings, _ = self._simulate(track_zero_passes=False)
+        return landings
 
+    def _count_zero_passes(self):
+        _, zero_passes = self._simulate(track_zero_passes=True)
+        return zero_passes
 
-# Part 2
-def count_zero_passes(rotations, start=50, size=100):
-    pos = start
-    count = 0
+    # ===== Public methods =====
 
-    for rot in rotations:
-        direction = rot[0]
-        amount = int(rot[1:])
+    def day_1_run_p1(self):
+        landings = self._count_zero_landings()
+        zero_count = landings.count(0)
+        print(f'Part 1: Zero Count - {zero_count}')
+        return zero_count
 
-        for _ in range(amount):
-            if direction == 'R':
-                pos = (pos + 1) % size
-            else:
-                pos = (pos - 1) % size
+    def day_1_run_p2(self):
+        zero_passes = self._count_zero_passes()
+        print(f'Part 2: Zero Passes Count - {zero_passes}')
+        return zero_passes
 
-            if pos == 0:
-                count += 1
-
-    return count
-
-
-def day_1_run_p2():
-    rotations = load_rotations(SAFE_ROTATIONS)
-    zero_passes = count_zero_passes(rotations)
-    print(zero_passes)
