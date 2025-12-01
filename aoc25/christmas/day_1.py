@@ -1,3 +1,6 @@
+from aoc25.christmas.helpers.loader import Loader
+
+
 class Day1:
     SAFE_ROTATIONS = 'aoc25/resources/safe_rotations.txt'
 
@@ -5,19 +8,9 @@ class Day1:
         self._path = path or self.SAFE_ROTATIONS
         self._start = start
         self._size = size
-        self._rotations = self._load_rotations()
+        self._rotations = Loader.load_lines(self._path)
 
     # ===== Private methods =====
-
-    def _load_rotations(self):
-        rotations = []
-        with open(self._path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                rotations.append(line)
-        return rotations
 
     def _step(self, pos: int, direction: str) -> int:
         if direction == 'R':
@@ -65,4 +58,3 @@ class Day1:
         zero_passes = self._count_zero_passes()
         print(f'Part 2: Zero Passes Count - {zero_passes}')
         return zero_passes
-
