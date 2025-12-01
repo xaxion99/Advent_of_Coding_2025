@@ -15,6 +15,7 @@ def load_rotations(path):
 
     return rotations
 
+
 def apply_rotations(rotations, start=50, size=100):
     pos = start
     results = []
