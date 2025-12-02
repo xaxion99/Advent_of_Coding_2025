@@ -42,7 +42,7 @@ class Day2:
 
         for value in range(start, end + 1):
             if part2:
-                if self._is_pattern_id(value, min_repeats=2):
+                if self._is_pattern_id(value):
                     invalids.append(value)
             else:
                 if self._is_pattern_id(value, exact_repeats=2):
