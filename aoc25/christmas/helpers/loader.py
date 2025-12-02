@@ -8,3 +8,9 @@ class Loader:
                 if line:
                     lines.append(line)
         return lines
+
+    @staticmethod
+    def load_csv_row(path: str):
+        with open(path, "r", encoding="utf-8") as f:
+            row = f.read().strip()
+        return [item.strip() for item in row.split(",") if item.strip()]
