@@ -1,5 +1,7 @@
 from aoc25.christmas.day_1 import Day1
 from aoc25.christmas.day_2 import Day2
+from aoc25.christmas.day_3 import Day3
+from aoc25.christmas.day_4 import Day4
 
 
 def main():
@@ -16,7 +18,14 @@ def main():
     day2.day_2_run_p2()
 
     # Day 3
+    day3 = Day3()
+    print(f'===== Day 3 =====')
+    day3.day_3_run_p1()
+    day3.day_3_run_p2()
 
+    # Day 4
+    day4 = Day4()
+    print(f'===== Day 4 =====')
 
 if __name__ == '__main__':
     main()
