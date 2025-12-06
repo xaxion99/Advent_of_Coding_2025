@@ -37,12 +37,14 @@ class Day3:
 
     # ===== Public methods =====
 
-    def day_3_run_p1(self):
+    def day_3_run_p1(self) -> int:
         max_joltages = self._find_max_joltages(self._battery_banks, 2)
         total_joltage = sum(max_joltages)
         print(f'Part 1: Total Joltage - {total_joltage}')
+        return total_joltage
 
-    def day_3_run_p2(self):
+    def day_3_run_p2(self) -> int:
         max_joltages = self._find_max_joltages(self._battery_banks, 12)
         total_joltage = sum(max_joltages)
         print(f'Part 2: Total Joltage - {total_joltage}')
+        return total_joltage

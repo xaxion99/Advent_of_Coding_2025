@@ -48,13 +48,13 @@ class Day1:
 
     # ===== Public methods =====
 
-    def day_1_run_p1(self):
+    def day_1_run_p1(self) -> int:
         landings = self._count_zero_landings()
         zero_count = landings.count(0)
         print(f'Part 1: Zero Count - {zero_count}')
         return zero_count
 
-    def day_1_run_p2(self):
+    def day_1_run_p2(self) -> int:
         zero_passes = self._count_zero_passes()
         print(f'Part 2: Zero Passes Count - {zero_passes}')
         return zero_passes

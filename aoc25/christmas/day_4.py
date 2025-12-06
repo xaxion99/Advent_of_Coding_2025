@@ -59,12 +59,12 @@ class Day4:
 
     # ===== Public methods =====
 
-    def day_4_run_p1(self):
+    def day_4_run_p1(self) -> int:
         paper_rolls = len(self._find_accessible_paper_rolls(self._paper_rolls_grid))
         print(f'Part 1: Paper Rolls - {paper_rolls}')
         return paper_rolls
 
-    def day_4_run_p2(self):
+    def day_4_run_p2(self) -> int:
         total_removed = self._prune_accessible_paper_rolls(self._paper_rolls_grid)
         print(f'Part 2: Total Removed Paper Rolls - {total_removed}')
         return total_removed

@@ -59,7 +59,7 @@ class Day2:
 
     # ===== Public methods =====
 
-    def day_2_run_p1(self):
+    def day_2_run_p1(self) -> int:
         all_invalid: list[list[int]] = []
 
         for range_str in self._product_id_ranges:
@@ -70,7 +70,7 @@ class Day2:
         print(f'Part 1: Invalid IDs Sum - {total_sum}')
         return total_sum
 
-    def day_2_run_p2(self):
+    def day_2_run_p2(self) -> int:
         all_invalid: list[list[int]] = []
 
         for range_str in self._product_id_ranges:
