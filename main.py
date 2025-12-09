@@ -1,5 +1,4 @@
 from aoc25.christmas.day_1 import Day1
-from aoc25.christmas.day_10 import Day10
 from aoc25.christmas.day_2 import Day2
 from aoc25.christmas.day_3 import Day3
 from aoc25.christmas.day_4 import Day4
@@ -8,9 +7,12 @@ from aoc25.christmas.day_6 import Day6
 from aoc25.christmas.day_7 import Day7
 from aoc25.christmas.day_8 import Day8
 from aoc25.christmas.day_9 import Day9
+from aoc25.christmas.day_10 import Day10
+from aoc25.christmas.day_11 import Day11
+from aoc25.christmas.day_12 import Day12
 
 
-def main():
+def twelve_days_of_christmas():
 
     # A partridge in a pear tree
     day1 = Day1()
@@ -86,4 +88,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    twelve_days_of_christmas()
