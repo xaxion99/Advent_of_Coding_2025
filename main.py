@@ -76,10 +76,10 @@ def twelve_days_of_christmas():
     run_with_timing("Day 10 Part 1", day10.day_10_run_p1)
     run_with_timing("Day 10 Part 2", day10.day_10_run_p2)
 
-    # day11 = Day11()
-    # print(f'===== Day 11 =====')
-    # run_with_timing("Day 11 Part 1", day11.day_11_run_p1)
-    # run_with_timing("Day 11 Part 2", day11.day_11_run_p2)
+    day11 = Day11()
+    print(f'===== Day 11 =====')
+    run_with_timing("Day 11 Part 1", day11.day_11_run_p1)
+    run_with_timing("Day 11 Part 2", day11.day_11_run_p2)
 
     # day12 = Day12()
     # print(f'===== Day 12 =====')
