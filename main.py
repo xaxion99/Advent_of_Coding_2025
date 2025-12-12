@@ -69,22 +69,22 @@ def twelve_days_of_christmas():
     day9 = Day9()
     print(f'===== Day 9 =====')
     run_with_timing("Day 9 Part 1", day9.day_9_run_p1)
-    run_with_timing("Day 9 Part 2", day9.day_9_run_p2)
+    #run_with_timing("Day 9 Part 2", day9.day_9_run_p2)
 
     day10 = Day10()
     print(f'===== Day 10 =====')
     run_with_timing("Day 10 Part 1", day10.day_10_run_p1)
-    run_with_timing("Day 10 Part 2", day10.day_10_run_p2)
+    #run_with_timing("Day 10 Part 2", day10.day_10_run_p2)
 
     day11 = Day11()
     print(f'===== Day 11 =====')
     run_with_timing("Day 11 Part 1", day11.day_11_run_p1)
     run_with_timing("Day 11 Part 2", day11.day_11_run_p2)
 
-    # day12 = Day12()
-    # print(f'===== Day 12 =====')
-    # run_with_timing("Day 12 Part 1", day12.day_12_run_p1)
-    # run_with_timing("Day 12 Part 2", day12.day_12_run_p2)
+    day12 = Day12()
+    print(f'===== Day 12 =====')
+    run_with_timing("Day 12 Part 1", day12.day_12_run_p1)
+    run_with_timing("Day 12 Part 2", day12.day_12_run_p2)
 
 
 if __name__ == '__main__':
